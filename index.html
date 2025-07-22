@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paty & Leo ♡</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <!-- Incluindo AOS (Animate On Scroll) -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+     <!-- Adicionando a animação do Preloader -->
+    <style>
+       /* Tela de Carregamento */
+       #preloader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+          overflow: hidden; /* Impede que os corações causem overflow */
+       }
+
+       body.preloader-active {
+    overflow: hidden;
+}
+
+       /* Estilo dos corações */
+       .heart {
+          font-size: 40px;
+          color: #4fa3f7; /* Coração azul */
+          animation: heart-animation 3s ease-in-out infinite;
+          position: absolute; /* Permite sobreposição */
+       }
+
+       /* Adicionando espaçamento entre os corações */
+       .heart:not(:first-child) {
+          margin-top: 25px; /* Espaçamento um pouco maior entre os corações */
+       }
+
+       /* Animação suave para os corações */
+       @keyframes heart-animation {
+          0% {
+             transform: translate(0, 0);
+             opacity: 1;
+          }
+          25% {
+             transform: translate(-10px, -20px); /* Reduz o deslocamento horizontal e vertical */
+             opacity: 0.8;
+          }
+          50% {
+             transform: translate(10px, -35px); /* Reduz o deslocamento */
+             opacity: 0.6;
+          }
+          75% {
+             transform: translate(-5px, -45px); /* Reduz o deslocamento */
+             opacity: 0.4;
+          }
+          100% {
+             transform: translate(5px, -60px); /* Reduz o deslocamento */
+             opacity: 0;
+          }
+       }
+
+       /* Animações para os corações diferentes */
+       .heart:nth-child(1) {
+          animation-delay: 0s;
+       }
+
+       .heart:nth-child(2) {
+          animation-delay: 0.2s;
+       }
+
+       .heart:nth-child(3) {
+          animation-delay: 0.4s;
+       }
+
+       .heart:nth-child(4) {
+          animation-delay: 0.6s;
+       }
+
+       .heart:nth-child(5) {
+          animation-delay: 0.8s;
+       }
+
+       @media (max-width: 768px) {
+    .heart {
+        font-size: 30px; /* Reduz o tamanho dos corações */
+    }
+}
+
+@media (max-width: 480px) {
+    .heart {
+        font-size: 20px; /* Reduz ainda mais em telas muito pequenas */
+    }
+}
+
+@media (max-width: 991px) { /* Aplica apenas para telas menores que 991px */
+    .navbar-collapse {
+        text-align: center;
+    }
+    
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Tela de Carregamento -->
+    <div id="preloader">
+        <img src="img/coracao.webp" alt="Heart 1" class="heart" style="width: 30px; height: 30px;">
+        <img src="img/coracao.webp" alt="Heart 1" class="heart" style="width: 30px; height: 30px;">
+        <img src="img/coracao.webp" alt="Heart 1" class="heart" style="width: 30px; height: 30px;">
+        <img src="img/coracao.webp" alt="Heart 1" class="heart" style="width: 30px; height: 30px;">
+        <img src="img/coracao.webp" alt="Heart 1" class="heart" style="width: 30px; height: 30px;">
+    </div> 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">P & L</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="primeira-secao" class="secao">
+        <header class="hero">
+            <h1 data-aos="fade" data-aos-duration="1300">Paty & Leo</h1>
+        </header>
+    </section>
+
+    <!-- Contagem Regressiva -->
+    <section id="moldura" class="section text-center">
+    <div class="container">
+        <h2 class="titulo-bonito"><b>Faltam apenas...</b></h2>
+        <div id="countdown" class="countdown"></div>
+    </div>
+</section>
+
+    <!-- Introdução -->
+    <section class="section text-center">
+  <div class="form-container">
+    <h2 class="titulo-bonito"><b>Formulário de Confirmação</b></h2>
+    <form>
+      <div class="form-group">
+        <label for="nome" style="text-align:left;display:block;">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+
+      <div class="form-group">
+        <label style="text-align:left;display:block;">Você irá na celebração na igreja?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="igreja" value="sim" required> Sim</label>
+          <label><input type="radio" name="igreja" value="nao"> Não</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="text-align:left;display:block;">Você irá na recepção?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="recepcao" value="sim" required> Sim</label>
+          <label><input type="radio" name="recepcao" value="nao"> Não</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="text-align:left;display:block;">Você ingere bebida alcoólica?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="bebida" value="sim" required> Sim</label>
+          <label><input type="radio" name="bebida" value="nao"> Não</label>
+        </div>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+    <!-- Incluindo o script AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Inicializa o AOS para usar as animações durante o scroll
+
+                // Função para remover o preloader após 1 segundo
+                window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1300); // O preloader desaparece após 1 segundo
+        };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>
